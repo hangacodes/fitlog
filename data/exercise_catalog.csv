@@ -1,0 +1,13 @@
+exercise_id,exercise_name,muscle_group,equipment
+E01,bench press,chest,barbell
+E02,incline dumbbell press,chest,dumbbells
+E03,squat,legs,barbell
+E04,deadlift,back,barbell
+E05,barbell row,back,barbell
+E06,overhead press,shoulders,barbell
+E07,lateral raise,shoulders,dumbbells
+E08,barbell curl,arms,barbell
+E09,tricep pushdown,arms,cable machine
+E10,leg press,legs,leg press machine
+E11,pull-up,back,bodyweight
+E12,romanian deadlift,legs,barbell
