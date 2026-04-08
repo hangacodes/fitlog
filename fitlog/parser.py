@@ -40,17 +40,17 @@ def cast_fields(fields, types):
 
 def parse_workout(fields):
     return models.WorkoutEntry(
-        date = fields[0],
-        exercise = fields[1],
+        date = fields[0].strip() if fields[0] is not None else None,
+        exercise = fields[1].strip() if fields[1] is not None else None,
         sets = fields[2],
         reps = fields[3],
         weight_kg = fields[4],
         rpe = fields[5] if len(fields) > 5 else None,
-        notes = fields[6] if len(fields) > 6 else None
+        notes = fields[6].strip() if len(fields) > 6 and fields[6] is not None else None
     )
 def parse_body_metric(fields):
     return models.BodyMetric(
-        date = fields[0],
+        date = fields[0].strip() if fields[0] is not None else None,
         weight_kg = fields[1],
         sleep_hours = fields[2],
         calories = fields[3],
@@ -60,10 +60,10 @@ def parse_body_metric(fields):
 
 def parse_exercise(fields):
     return models.ExerciseCatalogEntry(
-        exercise_id = fields[0],
-        exercise_name = fields[1],
-        muscle_group = fields[2],
-        equipment = fields[3]
+        exercise_id = fields[0].strip() if fields[0] is not None else None,
+        exercise_name = fields[1].strip() if fields[1] is not None else None,
+        muscle_group = fields[2].strip() if fields[2] is not None else None,
+        equipment = fields[3].strip() if fields[3] is not None else None
     )
 
 
