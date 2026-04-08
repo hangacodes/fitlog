@@ -19,6 +19,8 @@ def validate_workout(record, catalog_names):
 
     if not record.date:
         workout_errors.append("date is missing")
+    elif not record.date[:4].isdigit() or not record.date[5:7].isdigit() or not record.date[8:10].isdigit():
+        workout_errors.append("date is not valid")
     if not record.exercise:
         workout_errors.append("exercise is missing")
     elif record.exercise.lower() not in catalog_names:
@@ -40,6 +42,8 @@ def validate_metrics(record):
    
     if not record.date:
         body_metric_errors.append("date is missing")
+    elif not record.date[:4].isdigit() or not record.date[5:7].isdigit() or not record.date[8:10].isdigit():
+        body_metric_errors.append("date is not valid")
     if record.weight_kg < 30 or record.weight_kg > 200:
         body_metric_errors.append("weight is unrealistic - must be (30 - 200)")
     if record.sleep_hours < 0 or record.sleep_hours > 14:
