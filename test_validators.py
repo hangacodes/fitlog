@@ -15,12 +15,7 @@ valid_metrics , rejected_metrics = body_metrics_pipeline(records)
 print(rejected_wouts.summary())
 print(rejected_metrics.summary())
 
-print(f"Valid workouts: {len(valid_workouts)} | Flagged: {rejected_wouts.total}")
-print(f"Valid metrics: {len(valid_metrics)} | Flagged: {rejected_metrics.total}")
+# print(f"Valid workouts: {len(valid_workouts)} | Flagged: {rejected_wouts.total}")
+# print(f"Valid metrics: {len(valid_metrics)} | Flagged: {rejected_metrics.total}")
 
-for record in valid_workouts:
-    print(record.weight_kg)
-
-date = "2026-01"
-month = date[5:7]
-print(month)
+print((valid_workouts[0]))
