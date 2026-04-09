@@ -1,0 +1,42 @@
+Total workout rows: 51
+Total metric rows: 40
+Workouts rejected: 2
+Body metrics rejected: 1
+Rejected workouts at validation: 7
+Rejected metrics at validation: 3
+Rows that passed validation:
+	 workouts rows: 42
+	 metrics rows: 36
+
+--- Parse Rejections ---
+Line:47 - Error Line doesn't have enough fields to be parsed: 2026-02-07,barbell row,4,8,57.5 
+Line:48 - Error field 4 could not be cast: 2026-02-09,squat,4,8,heavy,8.0, 
+Line:16 - Error field 3 could not be cast: 2026-01-20,81.5,7.5,lots,2.5,4 
+
+--- Validation Issues ---
+Total flagged records 7
+Workouts flagged: 7
+Body metrics flagged: 0
+workout : 2026-01-06
+   - weight must be more than 0
+workout : 2026-01-13
+   - weight must be more than 0
+workout : not-a-date
+   - date is not valid
+workout : 2026-01-27
+   - weight must be more than 0
+workout : 2026-02-04
+   - exercise not found in catalog
+workout : 2026-02-09
+   - exercise is missing
+workout : 2026-02-10
+   - unrealistic number of reps - must be between 1 - 30 reps
+Total flagged records 3
+Workouts flagged: 0
+Body metrics flagged: 3
+body_metric : None
+   - date is missing
+body_metric : 2026-01-25
+   - slept hours out of range - must be (0 - 14)
+body_metric : 2026-02-01
+   - weight is unrealistic - must be (30 - 200)

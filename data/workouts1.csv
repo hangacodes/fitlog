@@ -1,0 +1,52 @@
+date,exercise,sets,reps,weight_kg,rpe,notes
+2026-01-05,bench press,4,8,60.0,7.5,
+2026-01-05,overhead press,3,10,35.0,7.0,
+2026-01-05,tricep pushdown,3,12,25.0,,
+2026-01-06,barbell row,4,8,50.0,7.0,
+2026-01-06, pull-up ,3,6,0.0,8.0,bodyweight only
+2026-01-07,squat,4,8,70.0,8.0,
+2026-01-07,leg press,3,12,120.0,6.5,
+2026-01-09,bench press,4,8,62.5,7.5,felt strong today
+2026-01-09,incline dumbbell press,3,10,20.0,7.0,
+2026-01-10,deadlift,4,5,90.0,8.5,grip was slipping
+2026-01-10,barbell curl,3,12,25.0,,
+2026-01-12,bench press,4,8,62.5,8.0,
+2026-01-12,overhead press,3,10,37.5,7.5,
+2026-01-13,barbell row,4,8,52.5,7.0,
+2026-01-13,pull-up,3,7,0.0,7.5,
+2026-01-14,squat,4,8,72.5,8.0,depth was good
+2026-01-14,romanian deadlift,3,10,60.0,7.0,
+2026-01-16,bench press,4,8,65.0,8.0,"new PR, solid reps"
+2026-01-16,lateral raise,3,15,8.0,6.0,
+2026-01-17,deadlift,4,5,95.0,9.0,"lower back tight, took extra rest"
+2026-01-19,bench press,4,8,65.0,8.5,
+2026-01-19,overhead press,3,10,37.5,7.5,
+2026-01-20,barbell row,4,8,55.0,7.5,
+2026-01-20,barbell curl,3,12,27.5,,
+2026-01-21,squat,4,8,75.0,8.5,
+2026-01-21,leg press,3,12,130.0,7.0,
+2026-01-23,bench press,4,8,67.5,8.0,
+2026-01-23,incline dumbbell press,3,10,22.0,7.5,
+2026-01-24,deadlift,4,5,97.5,9.0,
+not-a-date,overhead press,3,10,40.0,7.5,
+2026-01-27,barbell row,4,8,55.0,8.0,
+2026-01-27, pull-up,3,8,0.0,7.5,finally hit 8 reps clean
+2026-01-28,squat,4,8,77.5,8.5,
+2026-01-28,romanian deadlift,3,10,65.0,7.5,
+2026-01-30,bench press,4,8,70.0,8.5,"big milestone, 70kg bench"
+2026-01-30,lateral raise,3,15,9.0,6.5,
+2026-01-31,barbell row,4,8,57.5,8.0,
+2026-01-31,barbell curl,3,12,27.5,6.5,
+2026-02-02,squat,4,8,80.0,9.0,legs were shaking
+2026-02-02,leg press,3,12,140.0,7.5,
+2026-02-03,bench press,4,6,72.5,9.0,dropped to 6 reps
+2026-02-03,overhead press,3,10,40.0,8.0,
+2026-02-04,deadlift,4,5,100.0,9.5,"hit 100kg deadlift, huge day"
+2026-02-04,chest fly,3,12,12.0,6.0,
+2026-02-06,bench press,4,8,72.5,8.5,
+2026-02-06,tricep pushdown,3,12,30.0,,
+2026-02-07,barbell row,4,8,57.5
+2026-02-09,squat,4,8,heavy,8.0,
+2026-02-09,,4,8,60.0,7.0,
+2026-02-10,bench press,4,-3,72.5,8.0,
+2026-02-10,overhead press,3,10,42.5,8.0,
