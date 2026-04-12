@@ -1,7 +1,11 @@
+'''CSV parsing module — reads raw CSV files into dataclass instances.'''
 from fitlog import models
 WORKOUT_TYPES = [str, str, int, int, float, float, str]
 METRICS_TYPES = [str, float, float, int, float, int]
 EXERCISE_TYPES = [str, str, str, str]
+
+
+'''Split a CSV line into fields, handling quoted values.'''
 def csv_line_parser(line, delimiter = ","):
     fields = []
     current = ""
@@ -25,9 +29,10 @@ def csv_line_parser(line, delimiter = ","):
     return fields
     
 
+'''Cast a list of string fields to their expected types. Returns None for empty fields.'''
 def cast_fields(fields, types):
     result = []
-    for i in range(len(fields)):
+    for i in range(len(types)):
         if fields[i] == "":
             result.append(None)
         else:
@@ -37,7 +42,7 @@ def cast_fields(fields, types):
                 raise ValueError(f"field {i} could not be cast")
     return result
 
-
+'''Convert a list of cast fields into a WorkoutEntry dataclass.'''
 def parse_workout(fields):
     return models.WorkoutEntry(
         date = fields[0].strip() if fields[0] is not None else None,
@@ -48,6 +53,8 @@ def parse_workout(fields):
         rpe = fields[5] if len(fields) > 5 else None,
         notes = fields[6].strip() if len(fields) > 6 and fields[6] is not None else None
     )
+
+'''Convert a list of cast fields into a BodyMetric dataclass.'''
 def parse_body_metric(fields):
     return models.BodyMetric(
         date = fields[0].strip() if fields[0] is not None else None,
@@ -58,6 +65,7 @@ def parse_body_metric(fields):
         soreness = fields[5]
     )
 
+'''Convert a list of cast fields into an ExerciseCatalogEntry dataclass.'''
 def parse_exercise(fields):
     return models.ExerciseCatalogEntry(
         exercise_id = fields[0].strip() if fields[0] is not None else None,
@@ -67,6 +75,7 @@ def parse_exercise(fields):
     )
 
 
+'''Read a CSV file and return a tuple of (parsed_records, rejected_records).'''
 def parse_file(path, parse_fn, types, min_fields):
     with open(path, "r", encoding="utf-8") as f:
         header = f.readline()

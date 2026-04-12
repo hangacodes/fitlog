@@ -20,31 +20,29 @@ def run_pipeline():
 
 
         #---analytics---
-        print("About to call heavy_kg")
-        personal_records = heavy_kg(valid_workouts)
-        print("About to call volume totals")
-        volume_totals = count_volume(valid_workouts)
-        print("About to call freq")
-        frequency = workouts_freq(valid_workouts)
-        print("About to call averages")
-        averages = metrics_avg(valid_metrics)
-        print("About to call best / worst sleep")
+        personal_records = heavy_kg(valid_workouts)      
+        volume_totals = count_volume(valid_workouts)       
+        frequency = workouts_freq(valid_workouts)       
+        averages = metrics_avg(valid_metrics)      
+        best_sleep, worst_sleep = sleep_analytics(valid_metrics)
         best_sleep, worst_sleep = sleep_analytics(valid_metrics)
 
         analytics_results = {
             "personal_records": personal_records,
             "volume_totals": volume_totals,
             "averages": averages,
-            "best_sleep": {"date": best_sleep.date, "sleep_hours": best_sleep.sleep_hours},
-            "worst_sleep": {"date": worst_sleep.date, "sleep_hours": worst_sleep.sleep_hours},
             "workout_frequency": frequency
-        }
+            }
+
+        if best_sleep and worst_sleep:
+            analytics_results["best_sleep"] = {"date": best_sleep.date, "sleep_hours": best_sleep.sleep_hours}
+            analytics_results["worst_sleep"] = {"date": worst_sleep.date, "sleep_hours": worst_sleep.sleep_hours}
         total_workout_rows = len(parsed_workouts) + len(workouts_not_parseble)
         total_metrics_rows = len(parsed_metrics) + len(metric_not_parseble)
         #---output files---
-        quality_report_path = "output/main_quality_report.txt"
-        clean_workouts_path = "output/main_clean_workouts.csv"
-        json_summary_path = "output/main_summary.json"
+        quality_report_path = "output/quality_report.txt"
+        clean_workouts_path = "output/clean_workouts.csv"
+        json_summary_path = "output/summary.json"
 
         write_quality_report(quality_report_path, workouts_not_parseble, metric_not_parseble, (valid_workouts, rejected_workouts), (valid_metrics, rejected_metrics), total_workout_rows, total_metrics_rows)
         write_clean_workouts(clean_workouts_path, valid_workouts)

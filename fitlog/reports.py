@@ -1,7 +1,8 @@
+'''Report writing module — outputs pipeline results to text, CSV, and JSON files.'''
 import json
-import pathlib
 
 
+'''Write a plain-text data quality report covering parse and validation results.'''
 def write_quality_report(filepath, workout_rejects, metric_rejects,
                         workout_report, metric_report, total_workout_rows, total_metric_rows):
     with open(filepath, "w", encoding="utf-8") as f:
@@ -30,6 +31,7 @@ def write_quality_report(filepath, workout_rejects, metric_rejects,
         f.write(rejected_metrics.summary())
 
 
+'''Write validated workout records to a clean CSV file.'''
 def write_clean_workouts(filepath: str, valid_workouts:list):
     with open(filepath, "w", encoding="utf-8") as f:
         f.write("date,exercise,sets,reps,weight_kg,rpe,notes\n")
@@ -51,6 +53,8 @@ def write_clean_workouts(filepath: str, valid_workouts:list):
             
             f.write(f"{date},{exercise},{sets},{reps},{weight_kg},{rpe_str},{notes_str}\n")
 
+
+'''Write analytics results to a JSON file.'''
 def write_summary_json(filepath, analytics_results:dict):
     with open(filepath, "w") as f:
         json.dump(analytics_results, f, indent=2)

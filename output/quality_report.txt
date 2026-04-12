@@ -18,17 +18,17 @@ Total flagged records 7
 Workouts flagged: 7
 Body metrics flagged: 0
 workout : 2026-01-06
-   - weight must be more than 0
+   - weight field is missing
 workout : 2026-01-13
-   - weight must be more than 0
+   - weight field is missing
 workout : not-a-date
    - date is not valid
 workout : 2026-01-27
-   - weight must be more than 0
+   - weight field is missing
 workout : 2026-02-04
    - exercise not found in catalog
 workout : 2026-02-09
-   - exercise is missing
+   - exercise field is missing
 workout : 2026-02-10
    - unrealistic number of reps - must be between 1 - 30 reps
 Total flagged records 3

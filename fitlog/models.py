@@ -1,5 +1,8 @@
+'''Data models for FitLog pipeline records.'''
 from dataclasses import dataclass
 
+
+'''A single workout set entry parsed from the workouts CSV.'''
 @dataclass
 class WorkoutEntry:
     date : str
@@ -9,6 +12,8 @@ class WorkoutEntry:
     weight_kg: float
     rpe : float
     notes : str
+
+'''A single day's body metrics parsed from the body_metrics CSV.'''
 @dataclass
 class BodyMetric:
     date: str
@@ -17,6 +22,8 @@ class BodyMetric:
     calories: int
     water_liters: float
     soreness: int
+
+'''A reference entry mapping exercise names to muscle groups and equipment.'''
 @dataclass
 class ExerciseCatalogEntry:
     exercise_id: str
